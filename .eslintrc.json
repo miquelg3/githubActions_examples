@@ -5,6 +5,6 @@
     "quotes": ["error", "double"]
   },
   "scripts" {
-    "test": "jest"
+    "test": "sum.test.js"
   }
 }
