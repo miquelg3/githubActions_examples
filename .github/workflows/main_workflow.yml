@@ -3,7 +3,7 @@ name: Main workflow
 on: 
   push:
     branches:
-      - nodejs_jest_job
+      - nodejs_nodeversions_job
 
 jobs:
 
