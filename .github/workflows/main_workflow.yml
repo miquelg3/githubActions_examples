@@ -11,11 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download a file
-        uses: carlosperate/download-file-action@v1
-        with:
-            file-url: 'https://developer.mozilla.org/es/docs/Web/HTML'
-            file-name: 'file'
-            location: './new_folder'
+        run: wget https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/Informe_Comunicacion_20210127.ods -O ./new_folder
           
       - uses: afc163/surge-preview@v1
         with:
