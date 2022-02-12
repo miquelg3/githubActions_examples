@@ -13,8 +13,8 @@ jobs:
       - name: Download a file
         uses: carlosperate/download-file-action@v1
         with:
-            file-url: 'https://github.com/carlosperate/download-file-action/archive/refs/tags/v1.0.3.tar.gz'
-            file-name: 'new_filename.tar.gz'
+            file-url: 'https://developer.mozilla.org/es/docs/Web/HTML'
+            file-name: 'file'
             location: './new_folder'
           
       - uses: afc163/surge-preview@v1
