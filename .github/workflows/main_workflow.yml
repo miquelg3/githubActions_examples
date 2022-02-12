@@ -13,8 +13,6 @@ jobs:
         uses: carlosperate/download-file-action@v1
         with:
           file-url: 'https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/Informe_Comunicacion_20210127.ods'
-          file-name: '/Informe_Comunicacion_20210127.ods'
-          location: './Informe_Covid'
           
       - uses: afc163/surge-preview@v1
         with:
