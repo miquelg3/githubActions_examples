@@ -12,7 +12,7 @@ jobs:
       - name: Download a file
         uses: carlosperate/download-file-action@v1
         with:
-          file-url: 'https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/Informe_Comunicacion_20210127.ods'
+          file-url: 'https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py'
           
       - run: echo "The file was downloaded to ${{ steps.download-poetry-simple.outputs.file-path }}"
           
