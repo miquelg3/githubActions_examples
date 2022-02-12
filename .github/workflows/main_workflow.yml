@@ -1,34 +1,27 @@
-name: Main workflow
+name: Everyday
 
-on: 
-  push:
-#     branches: 
-#       - master
-#       - nodejs_jest_job
-
+on: [push]
+#   schedule:
+#     - cron: "0 0 * * *"
+    
 jobs:
-
   primerjob:
-    name: linter_execution
+    name: descargar proyecto
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      
-      - name: Linter execution
-        uses: github/super-linter@v4
-        env:
-          DEFAULT_BRANCH: nodejs_example
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTER_RULES_PATH: /
-          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
-          VALIDATE_JAVASCRIPT_ES: true
+      - name: Download a file
+        uses: carlosperate/download-file-action@v1
+        with:
+          file-url: 'https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/Informe_Comunicacion_20210127.ods'
+          file-name: '/Informe_Comunicacion_20210127.ods'
+          location: './Informe_Covid'
           
-#   segundojob:
-#     name: test_execution
-#     runs-on: ubuntu-latest
-    
-#     steps:
-#       - name: 
-      
+      - uses: afc163/surge-preview@v1
+        with:
+          surge_token: ${{ secrets.SURGE_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          dist: public
+          teardown: 'true'
+          build: |
+            npm install
+            npm run build
