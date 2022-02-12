@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download a file
-        run: wget https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/Informe_Comunicacion_20210127.ods -O https://github.com/miquelg3/githubActions_examples/tree/download_and_share_file/new_folder
+        run: wget https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/Informe_Comunicacion_20210127.ods -O new_folder
           
       - uses: afc163/surge-preview@v1
         with:
