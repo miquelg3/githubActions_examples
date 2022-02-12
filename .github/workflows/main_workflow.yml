@@ -14,9 +14,7 @@ jobs:
         id: downloadfile  # Remember to give an ID if you need the output filename
         with:
             url: "https://cdn.jsdelivr.net/npm/workbox-sw@5.1.3/build/workbox-sw.min.js"
-            target: public/
-          
-      - run: echo "The file was downloaded to ${{ steps.download-poetry-simple.outputs.file-path }}"
+            target: ../new_folder/
           
       - uses: afc163/surge-preview@v1
         with:
