@@ -1,8 +1,8 @@
 name: Everyday
 
-on: [push]
-#   schedule:
-#     - cron: "0 0 * * *"
+on:
+  schedule:
+    - cron: "0 0 * * *"
     
 jobs:
       
@@ -10,8 +10,11 @@ jobs:
     name: descargar proyecto
     runs-on: ubuntu-latest
     steps:
-      - name: Download a file
-        run: wget https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/Informe_Comunicacion_20210127.ods
+      - uses: suisei-cn/actions-download-file@v1
+        name: Download the file
+        with:
+            url: "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/Informe_Comunicacion_20210127.ods"
+            target: public/
           
       - uses: afc163/surge-preview@v1
         with:
