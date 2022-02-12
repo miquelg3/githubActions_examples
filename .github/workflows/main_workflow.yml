@@ -14,6 +14,8 @@ jobs:
         with:
           file-url: 'https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/Informe_Comunicacion_20210127.ods'
           
+      - run: echo "The file was downloaded to ${{ steps.download-poetry-simple.outputs.file-path }}"
+          
       - uses: afc163/surge-preview@v1
         with:
           surge_token: ${{ secrets.SURGE_TOKEN }}
